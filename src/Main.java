@@ -13,6 +13,19 @@ public class Main {
 
         //task3
         fullName = "Иванов Семён Семёнович";
-        System.out.printf("Данные ФИО сотрудника — %s%n", fullName.replace('ё', 'е'));
+
+        // variation 1
+        System.out.printf("Вариант 1. Данные ФИО сотрудника — %s%n", fullName.replace('ё', 'е'));
+
+        // variation 2: используются функции split(), contains()
+        String[] buf = fullName.split(" ");
+        System.out.print("Вариант 2. Данные ФИО сотрудника —");
+        for (int i=0; i < buf.length; i++) {
+            if (buf[i].contains("ё")) {
+                System.out.print(" " + buf[i].replace('ё', 'е'));
+            } else {
+                System.out.print(" " + buf[i]);
+            }
+        }
     }
 }
